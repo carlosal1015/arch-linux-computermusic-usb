@@ -1,9 +1,5 @@
-#sudo dd if=/dev/zero of=/dev/sda bs=1M status=progress
-!/bin/bash
+#!/bin/sh
 
-setxkbmap -option compose:caps ;
 cbatticon &
 nm-applet &
 picom &
-
-

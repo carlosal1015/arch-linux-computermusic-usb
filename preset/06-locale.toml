@@ -1,8 +1,0 @@
-script = """
-localectl set-locale LANG=${ALMA_LOCALE}
-setxkbmap -layout ${ALMA_KB_LAYOUT}
-echo ${ALMA_LOCALE} >> /etc/locale.gen
-locale-gen
-"""
-
-environment_variables = ["ALMA_LOCALE", "ALMA_KB_LAYOUT"]

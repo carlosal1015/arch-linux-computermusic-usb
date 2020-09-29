@@ -1,0 +1,7 @@
+#https://wiki.archlinux.org/index.php/LightDM#GTK_greeter_2
+script = """
+sudo localectl set-locale LANG=${ALMA_LOCALE}
+echo 'setxkbmap -layout ${ALMA_KB_LAYOUT} -option compose:caps ;' > .xprofile
+"""
+
+environment_variables = ["ALMA_LOCALE", "ALMA_KB_LAYOUT"]
