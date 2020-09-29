@@ -1,3 +1,5 @@
+packages = ["bash"]
+
 script = """
 cd /home/${ALMA_USER}/
 chsh -s /usr/bin/bash ${ALMA_USER}

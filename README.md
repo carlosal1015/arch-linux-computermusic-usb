@@ -18,7 +18,7 @@ This version uses the i3 tiling window manager as the [Desktop Environment](http
 Provide ALMA the preset directory, specifying the `ALMA_USER`, `TIMEZONE` and `ALMA_LOCALE` environment variables:
 
 ```bash
-$ ALMA_USER="mads" TIMEZONE="Europe/Oslo" ALMA_LOCALE="en_UK.UTF-8" ALMA_KB_LAYOUT="dk" sudo -E alma create --presets preset
+$ ALMA_USER="mads" TIMEZONE="Europe/Oslo" ALMA_LOCALE="en_GB.UTF-8" ALMA_KB_LAYOUT="dk" sudo -E alma create --presets preset
 ```
 
 ### Filesystem already present error
@@ -29,9 +29,10 @@ In my experience, the only way to get rid of it is to completely bomb the drive 
 You can use these commands but BIG FAT WARNING: Make sure `sda` is replaced with the correct drive name (found using `lsblk` for example). Otherwise you may do irreparable damage.
 
 ```bash
+# Unmount
 sudo umount /dev/sda*
-sudo dd if=/dev/zero of=/dev/sda bs=1M status=progress
-sudo partprobe
+# Zero out everything on drive
+sudo dd if=/dev/zero of=/dev/sda bs=1M status=progress && sudo partprobe
 ```
 
 ## What is included
