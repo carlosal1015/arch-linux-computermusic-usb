@@ -22,6 +22,11 @@ Plug 'itchyny/lightline.vim'
 Plug 'machakann/vim-highlightedyank'
 Plug 'andymass/vim-matchup'
 
+" Computer musics
+Plug 'davidgranstrom/scnvim', { 'do': {-> scnvim#install() } }
+Plug 'tidalcycles/vim-tidal'
+Plug 'luisjure/csound-vim'
+
 " Fuzzy finder
 Plug 'airblade/vim-rooter'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }

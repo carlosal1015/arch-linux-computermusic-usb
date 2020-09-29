@@ -1,4 +1,4 @@
-packages = ["i3-wm", "i3lock", "i3status", "dmenu", "arandr"]
+packages = ["i3-wm", "i3lock", "i3status", "dmenu", "arandr", "rofi"]
 shared_directories = ["i3_config"]
 script = """
 mkdir -p /home/${ALMA_USER}/.config/i3/
