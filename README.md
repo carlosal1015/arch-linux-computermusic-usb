@@ -21,6 +21,19 @@ Provide ALMA the preset directory, specifying the `ALMA_USER`, `TIMEZONE` and `A
 $ ALMA_USER="mads" TIMEZONE="Europe/Oslo" ALMA_LOCALE="en_UK.UTF-8" ALMA_KB_LAYOUT="dk" sudo -E alma create --presets preset
 ```
 
+### Filesystem already present error
+If you've installed alma on your usb before, you may get "filesystem already present" type errors when trying to install alma on to it, even after wiping partitions in `fdisk`, `cfdisk` or `gparted`.
+
+In my experience, the only way to get rid of it is to completely bomb the drive using `dd`.
+
+You can use these commands but BIG FAT WARNING: Make sure `sda` is replaced with the correct drive name (found using `lsblk` for example). Otherwise you may do irreparable damage.
+
+```bash
+sudo umount /dev/sda*
+sudo dd if=/dev/zero of=/dev/sda bs=1M status=progress
+sudo partprobe
+```
+
 ## What is included
 ### User
 The user given by `ALMA_USER` is created with a home directory and XDG directories, and given passwordless sudo access.
