@@ -1,0 +1,5 @@
+script = """
+localectl set-locale LANG=${ALMA_LOCALE}
+"""
+
+environment_variables = ["ALMA_LOCALE"]
