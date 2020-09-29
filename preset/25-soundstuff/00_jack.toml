@@ -1,0 +1,1 @@
+packages = ["jack2", "qjackctl", "pulseaudio-jack"]

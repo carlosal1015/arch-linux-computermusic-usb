@@ -1,0 +1,1 @@
+packages = ["supercollider", "sc3-plugins"]
