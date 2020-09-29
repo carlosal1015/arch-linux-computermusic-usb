@@ -1,4 +1,5 @@
-#!/bin/bash
+#sudo dd if=/dev/zero of=/dev/sda bs=1M status=progress
+!/bin/bash
 
 setxkbmap -option compose:caps ;
 cbatticon &

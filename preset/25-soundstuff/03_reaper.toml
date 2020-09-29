@@ -1,1 +1,1 @@
-packages = ["reaper-bin", "sws"]
+aur_packages = ["reaper-bin", "sws"]

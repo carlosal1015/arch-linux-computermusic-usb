@@ -1,1 +1,1 @@
-packages = ["sox"]
+packages = ["sox", "audacity"]

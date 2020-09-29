@@ -1,1 +1,1 @@
-packages = ["scrot", "feh", "fd", "bat", "exa", "fzf"]
+packages = ["htop","scrot", "feh", "fd", "bat", "exa", "fzf", "curl", "wget"]

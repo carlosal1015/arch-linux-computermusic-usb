@@ -1,1 +1,1 @@
-packages = ["jack2", "qjackctl", "pulseaudio-jack"]
+packages = ["jack2", "qjackctl", "pulseaudio-jack", "njconnect"]

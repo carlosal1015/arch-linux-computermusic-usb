@@ -1,0 +1,6 @@
+script = 
+"""
+cd /home/${ALMA_USER}/
+chsh -s /usr/bin/zsh ${ALMA_USER}
+cd /
+"""

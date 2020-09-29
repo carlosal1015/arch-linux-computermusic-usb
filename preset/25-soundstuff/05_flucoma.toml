@@ -1,1 +1,1 @@
-packages = ["flucoma"]
+aur_packages = ["flucoma-cli"]
