@@ -1,4 +1,4 @@
-# arch-i3-usb
+# arch-i3-computermusic-usb
 
 This [ALMA](https://github.com/r-darwish/alma) preset installs a fully usable and persistent Arch Linux system on a LiveUSB.
 
