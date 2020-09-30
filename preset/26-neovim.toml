@@ -1,5 +1,5 @@
 packages = ["neovim", "python-pynvim", "nodejs"]
-
+aur_packages = ["pandoc-bin"]
 shared_directories = ["nvim_config", "nvim_base16"]
 
 script = """
