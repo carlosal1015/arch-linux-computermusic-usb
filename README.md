@@ -10,7 +10,7 @@ This [ALMA](https://github.com/r-darwish/alma) preset installs a fully usable an
 - Sox
 - Flucoma
 - Jack (with both the GUI jack manager `qjackctl` and the terminal based `njconnect` patcher)
-- Realtime kernel
+- Realtime kernel (and added realtime priviliges for your user)
 
 This version uses the i3 tiling window manager as the [Desktop Environment](https://wiki.archlinux.org/index.php/Desktop_environment).
 
