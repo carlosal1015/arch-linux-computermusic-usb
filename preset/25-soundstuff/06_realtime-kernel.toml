@@ -1,1 +1,11 @@
 packages = ["linux-rt", "linux-rt-headers"]
+script = """
+set -eux
+
+# Set realtime priority and memlock
+sudo echo "
+@audio nice -15 
+@audio - rtprio 90       # maximum realtime priority
+@audio - memlock unlimited  # maximum locked-in-memory address space (KB)
+" | sudo tee -a /etc/security/limits.conf
+"""
