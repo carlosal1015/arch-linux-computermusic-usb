@@ -1,7 +1,6 @@
 packages = ["sudo", "xdg-user-dirs"]
 script = """
 set -eux
-
 useradd -m ${ALMA_USER}
 echo Enter password for ${ALMA_USER}:
 passwd ${ALMA_USER}
