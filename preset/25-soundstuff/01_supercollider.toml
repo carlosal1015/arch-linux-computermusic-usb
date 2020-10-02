@@ -1,1 +1,12 @@
 packages = ["supercollider", "sc3-plugins"]
+shared_directories = ["sc_config"]
+
+script = """
+set -eux
+
+mkdir -p /home/${ALMA_USER}/.config/SuperCollider
+
+chown -R ${ALMA_USER} /home/${ALMA_USER}/.config/nvim
+chgrp -R ${ALMA_USER} /home/${ALMA_USER}/.config/nvim
+
+"""

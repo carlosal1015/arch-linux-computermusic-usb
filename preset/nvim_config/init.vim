@@ -2,6 +2,10 @@ set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath = &runtimepath
 
 call plug#begin()
+
+" gruvbox colours
+Plug 'morhetz/gruvbox'
+
 " ag vim
 Plug 'mileszs/ack.vim'
 

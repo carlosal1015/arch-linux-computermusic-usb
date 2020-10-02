@@ -1,0 +1,12 @@
+packages = ["sway", "swaylock", "waybar"]
+shared_directories = ["sway_config"]
+script = """
+
+mkdir -p /home/${ALMA_USER}/.config/sway/
+cp /shared_dirs/sway_config/sway_config /home/${ALMA_USER}/.config/sway/config
+chown ${ALMA_USER} /home/${ALMA_USER}/.config/sway/config
+chown -R ${ALMA_USER} /home/${ALMA_USER}/.config/sway
+chgrp -R ${ALMA_USER} /home/${ALMA_USER}/.config/sway
+
+"""
+environment_variables = ["ALMA_USER"]

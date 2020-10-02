@@ -4,4 +4,8 @@ script = """
 cd /home/${ALMA_USER}/
 chsh -s /bin/bash ${ALMA_USER}
 cd /
+
+echo "alias vim='nvim'" >> /home/${ALMA_USER}/.bash_rc
 """
+
+environment_variables = ["ALMA_USER"]

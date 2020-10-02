@@ -1,4 +1,4 @@
-packages = ["neovim", "python-pynvim", "nodejs"]
+packages = ["neovim", "python-pynvim", "nodejs", "python2", "python2-pynvim"]
 aur_packages = ["pandoc-bin"]
 shared_directories = ["nvim_config", "nvim_base16"]
 
@@ -14,6 +14,7 @@ cp /shared_dirs/nvim_base16/base16-classic-dark.sh /home/${ALMA_USER}/.config/ba
 chown -R ${ALMA_USER} /home/${ALMA_USER}/.config/base16
 chgrp -R ${ALMA_USER} /home/${ALMA_USER}/.config/base16
 sudo -u ${ALMA_USER} nvim --headless +PlugInstall +qall
+sudo -u ${ALMA_USER} nvim --headless +UpdateRemotePlugins +PlugUpdate +qall
 
 # Install tidalvim
 cd ~/.vim/plugged/vim-tidal && sudo make install

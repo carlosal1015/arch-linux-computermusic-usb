@@ -18,8 +18,13 @@ This version uses the i3 tiling window manager as the [Desktop Environment](http
 Provide ALMA the preset directory, specifying the `ALMA_USER`, `TIMEZONE` and `ALMA_LOCALE` environment variables:
 
 ```bash
-$ ALMA_USER="mads" TIMEZONE="Europe/Oslo" ALMA_LOCALE="en_GB.UTF-8" ALMA_KB_LAYOUT="dk" sudo -E alma create --presets preset
+$ ALMA_USER="mads" TIMEZONE="Europe/Oslo" ALMA_KB_LAYOUT="dk" sudo -E alma create --presets preset
 ```
+
+```bash
+$ ALMA_USER="mads" TIMEZONE="Europe/Oslo" ALMA_KB_LAYOUT="dk" sudo -E alma create --presets preset --image 10GiB arch-computermusic-usb.img
+```
+
 
 ### Filesystem already present error
 If you've installed alma on your usb before, you may get "filesystem already present" type errors when trying to install alma on to it, even after wiping partitions in `fdisk`, `cfdisk` or `gparted`.
