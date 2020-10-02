@@ -6,23 +6,25 @@ This [ALMA](https://github.com/r-darwish/alma) preset installs a fully usable an
 - Csound
 - Tidal
 - Pure Data
-- Reaper (with SWS extensions)
+- Reaper
 - Sox
 - Flucoma
 - Jack (with both the GUI jack manager `qjackctl` and the terminal based `njconnect` patcher)
 - Realtime kernel (and added realtime priviliges for your user)
 
-This version uses the i3 tiling window manager as the [Desktop Environment](https://wiki.archlinux.org/index.php/Desktop_environment).
+This version includes both the i3 tiling window manager and the sway tiling window manager as the [Desktop Environment](https://wiki.archlinux.org/index.php/Desktop_environment). You can choose which of these to use at login.
 
 ## Usage
 Provide ALMA the preset directory, specifying the `ALMA_USER`, `TIMEZONE` and `ALMA_LOCALE` environment variables:
 
 ```bash
-$ ALMA_USER="mads" TIMEZONE="Europe/Oslo" ALMA_KB_LAYOUT="dk" sudo -E alma create --presets preset
+$ ALMA_USER="computer" TIMEZONE="Europe/Oslo" ALMA_KB_LAYOUT="dk" sudo -E alma create --presets preset
 ```
 
+Create img file from preset:
+
 ```bash
-$ ALMA_USER="mads" TIMEZONE="Europe/Oslo" ALMA_KB_LAYOUT="dk" sudo -E alma create --presets preset --image 10GiB arch-computermusic-usb.img
+$ ALMA_USER="computer" TIMEZONE="Europe/Oslo" ALMA_KB_LAYOUT="dk" sudo -E alma create --presets preset --image 10GiB arch-computermusic-usb.img
 ```
 
 
