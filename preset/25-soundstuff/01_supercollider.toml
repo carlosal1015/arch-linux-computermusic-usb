@@ -1,12 +1,26 @@
-packages = ["supercollider", "sc3-plugins"]
-shared_directories = ["sc_config"]
+packages = ["supercollider", "sc3-plugins", "git"]
 
 script = """
 set -eux
 
+# SuperCollider conf
 mkdir -p /home/${ALMA_USER}/.config/SuperCollider
+chown -R ${ALMA_USER} /home/${ALMA_USER}/.config/SuperCollider
+chgrp -R ${ALMA_USER} /home/${ALMA_USER}/.config/SuperCollider
 
-chown -R ${ALMA_USER} /home/${ALMA_USER}/.config/nvim
-chgrp -R ${ALMA_USER} /home/${ALMA_USER}/.config/nvim
+# Quarks folder
+mkdir -p /home/${ALMA_USER}/.config/SuperCollider/downloaded-quarks
+chown -R ${ALMA_USER} /home/${ALMA_USER}/.config/SuperCollider/downloaded-quarks
+chgrp -R ${ALMA_USER} /home/${ALMA_USER}/.config/SuperCollider/downloaded-quarks
+
+# Make sc lang config to include SuperDirt quark
+echo "includePaths:
+    -   /home/${ALMA_USER}/.local/share/SuperCollider/downloaded-quarks/SuperDirt
+excludePaths:
+    []
+postInlineWarnings: false" > /home/${ALMA_USER}/.config/SuperCollider/sclang_conf.yaml
+
+cd /home/${ALMA_USER}/.config/SuperCollider/downloaded-quarks
+git clone https://github.com/musikinformatik/SuperDirt
 
 """
