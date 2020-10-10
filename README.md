@@ -21,12 +21,17 @@ Provide ALMA the preset directory, specifying the `ALMA_USER`, `TIMEZONE` and `A
 $ ALMA_USER="computer" TIMEZONE="Europe/Oslo" ALMA_KB_LAYOUT="dk" sudo -E alma create --presets preset
 ```
 
-Create img file from preset:
+Alternatively, create img file from preset:
 
 ```bash
 $ ALMA_USER="computer" TIMEZONE="Europe/Oslo" ALMA_KB_LAYOUT="dk" sudo -E alma create --presets preset --image 10GiB arch-computermusic-usb.img
 ```
 
+And then when you are ready, flash it to a drive:
+
+```bash
+$ sudo dd bs=1M if=arch-computermusic-usb.img of=/dev/sdX status=progress
+```
 
 ### Filesystem already present error
 If you've installed alma on your usb before, you may get "filesystem already present" type errors when trying to install alma on to it, even after wiping partitions in `fdisk`, `cfdisk` or `gparted`.

@@ -1,7 +1,7 @@
 set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath = &runtimepath
 
-call plug#begin()
+call plug#begin('~/.vim/plugged')
 
 " gruvbox colours
 Plug 'morhetz/gruvbox'
@@ -264,8 +264,6 @@ augroup sc
 	autocmd filetype supercollider call SCBindings()
 augroup end
 
-" Statusline
-au fileType supercollider call <SID>set_sclang_statusline()
 """"""""""""""""""""""""""""""
 "  Colors
 """""""""""""""""""""""""""""""

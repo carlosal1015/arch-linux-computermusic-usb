@@ -1,4 +1,4 @@
-packages = ["sway", "swaylock", "waybar"]
+packages = ["sway", "swaylock", "waybar", "wofi"]
 shared_directories = ["sway_config"]
 script = """
 
@@ -8,5 +8,11 @@ chown ${ALMA_USER} /home/${ALMA_USER}/.config/sway/config
 chown -R ${ALMA_USER} /home/${ALMA_USER}/.config/sway
 chgrp -R ${ALMA_USER} /home/${ALMA_USER}/.config/sway
 
+echo "
+input * {
+    xkb_layout "$ALMA_KB_LAYOUT"
+}
+" >> /home/${ALMA_USER}/.config/sway/config
+
 """
-environment_variables = ["ALMA_USER"]
+environment_variables = ["ALMA_USER", "ALMA_KB_LAYOUT"]

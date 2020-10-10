@@ -1,0 +1,4 @@
+script = """
+# Install tidalvim
+#cd /.vim/plugged/vim-tidal && sudo make install
+"""

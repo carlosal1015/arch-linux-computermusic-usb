@@ -1,5 +1,5 @@
-packages = ["neovim", "python-pynvim", "nodejs", "python2", "python2-pynvim"]
-aur_packages = ["pandoc-bin"]
+packages = ["neovim", "python-pynvim", "nodejs", "python2"]
+aur_packages = ["pandoc-bin", "python2-pynvim"]
 shared_directories = ["nvim_config", "nvim_base16"]
 
 script = """
@@ -13,11 +13,27 @@ mkdir -p /home/${ALMA_USER}/.config/base16/shell/scripts/
 cp /shared_dirs/nvim_base16/base16-classic-dark.sh /home/${ALMA_USER}/.config/base16/shell/scripts/
 chown -R ${ALMA_USER} /home/${ALMA_USER}/.config/base16
 chgrp -R ${ALMA_USER} /home/${ALMA_USER}/.config/base16
+
+# Install plugins
 sudo -u ${ALMA_USER} nvim --headless +PlugInstall +qall
-sudo -u ${ALMA_USER} nvim --headless +UpdateRemotePlugins +PlugUpdate +qall
+
+# Update remote plugins to satisfy deoplete
+sudo -u ${ALMA_USER} nvim --headless +UpdateRemotePlugins +qall
+
+# Install scnvim
+#sudo -u ${ALMA_USER} nvim --headless -c "call scnvim#install()" -c "qall"
+mkdir -p /home/${ALMA_USER}/.local/share/SuperCollider/Extensions/scide_scnvim
+chown -R ${ALMA_USER} /home/${ALMA_USER}/.local/share/SuperCollider
+chown -R ${ALMA_USER} /home/${ALMA_USER}/.local/share/SuperCollider/Extensions/scide_scnvim
+chgrp -R ${ALMA_USER} /home/${ALMA_USER}/.local/share/SuperCollider/Extensions/scide_scnvim
+
+sudo -u ${ALMA_USER} ln -s /home/${ALMA_USER}/.vim/plugged/scnvim/scide_scnvim /home/${ALMA_USER}/.local/share/SuperCollider/Extensions/scide_scnvim/scnvim
 
 # Install tidalvim
-cd ~/.vim/plugged/vim-tidal && sudo make install
+#cd /home/${ALMA_USER}/.vim/plugged/vim-tidal && sudo -u ${ALMA_USER} make install
+sudo ln -s /home/${ALMA_USER}/.vim/plugged/vim-tidal/bin/tidal /usr/bin/tidal
+sudo ln -s /home/${ALMA_USER}/.vim/plugged/vim-tidal/bin/tidalvim /usr/bin/tidalvim
+
 """
 
 environment_variables = ["ALMA_USER"]

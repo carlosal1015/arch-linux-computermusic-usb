@@ -1,1 +1,6 @@
 packages = ["htop","scrot", "feh", "fd", "bat", "exa", "fzf", "curl", "wget"]
+
+script="""
+echo "alias vim='nvim'" >> /home/${ALMA_USER}/.bash_rc
+"""
+environment_variables = ["ALMA_USER"]
